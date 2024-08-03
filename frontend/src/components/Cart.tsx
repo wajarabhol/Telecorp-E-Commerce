@@ -25,9 +25,7 @@ function Carts() {
   }
 
   const getCarts = async () => {
-    // const getCarts = async (id: string) => {
     const apiUrl = "http://localhost:8080/carts";
-    // const apiUrl = `http://localhost:8080/products/${id}`;
     const requestOptions = {
       method: "GET",
       headers: {
@@ -43,9 +41,6 @@ function Carts() {
         console.log(res);
         if (res.data) {
           setCarts(res.data);  // ข้อมูลถูกต้อง หลังบ้านจะส่งข้อมูลมาตามที่ขอ
-          // res.data.forEach((info: CartsInterface) => {
-          //   setTotalPrice(totalPrice + (info.Amount * info.Product.Price))
-          // })
         }
         else {
           console.log(res.error);  // ข้อมูลไม่ถูกต้อง จะแสดงค่า error ที่ console เช่น token หรือ ข้อมูลไม่ถูกต้อง ก็จะแสดงค่าของข้อมูลตัวนั้น
@@ -129,12 +124,6 @@ function Carts() {
   useEffect(() => {
     getCarts();
   }, []);
-
-  // useEffect(() => {
-  //   if (params.id) {
-  //     getCarts(params.id)
-  //   }
-  // }, []);
 
   return (
     <div>
